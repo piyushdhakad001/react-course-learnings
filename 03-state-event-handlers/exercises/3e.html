@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container"></div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script type="text/babel">
+    <div class="container"></div>
+
+    function App() {
+      const [count, setCount] = React.useState(0);
+      return (
+
+        <>
+          <Counter count={count} setCount={setCount} />
+          <Counter count={count} setCount={setCount} />
+        </>
+      )
+    }
+    function Counter({count, setCount}) {
+      
+
+      function HandleCheck() {
+        setCount(count + 1);
+      }
+
+      return <button onClick={HandleCheck}>Clicked {count} {count === 1 ? "time" : "times"}</button>
+
+    }
+
+    const container = document.querySelector(".container");
+    const rend = ReactDOM.createRoot(container);
+    rend.render(<App />);
+  </script>
+</body>
+
+</html>

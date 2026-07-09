@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+    }
+    div{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+    }
+    button {
+      background-color: rgb(25, 135, 84);
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      margin: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script type="text/babel">
+
+    function App() {
+      const [count, setCount] = React.useState(0);
+     
+      function handleClick(){
+        setCount(count + 1);
+      }
+      function handleReset(){
+        setCount(0);
+      }
+
+      const buttonRef = React.useRef();
+      function handleAutoClick(){
+        setInterval(() => {
+          const buttonElem = buttonRef.current;
+          if(buttonElem){
+            buttonElem.click();
+          }
+        }, 1000);
+      }
+      return (
+        <div>
+        <button onClick={handleClick}
+        ref={buttonRef}>Clicked {count} time</button>
+        <button onClick={handleReset}>Reset</button>
+        <button onClick={handleAutoClick}>Auto Click</button>
+        </div>
+      )
+    }
+
+    const container = document.querySelector(".container");
+    const rend = ReactDOM.createRoot(container);
+    rend.render(<App />);
+  </script>
+</body>
+
+</html>

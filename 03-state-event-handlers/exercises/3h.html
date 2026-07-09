@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container"></div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script type="text/babel">
+    <div class="container"></div>
+
+  function App(){
+   const [inputValue, setInputValue] = React.useState('');
+    
+   function handleChange(event){
+    setInputValue(event.target.value);
+   }
+   function handleReset(){
+    setInputValue('');
+   }
+   function handleExample(){
+    setInputValue('Alice');
+   }
+    return(
+      <>
+      <input value={inputValue} onChange={handleChange} placeholder="Type a name here"/>
+      <button onClick={handleReset}>Reset</button>
+      <button onClick={handleExample}>Example</button>
+      <p> Hello:{inputValue} </p>
+      </>
+    )
+  }
+     
+
+    const container = document.querySelector(".container");
+    const rend = ReactDOM.createRoot(container);
+    rend.render(<App />);
+  </script>
+</body>
+
+</html>

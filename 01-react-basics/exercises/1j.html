@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script type="text/babel">
+      <div class="container"></div>
+
+      const container = document.querySelector(".container");
+      const root = ReactDOM.createRoot(container);
+
+      setInterval(() => {
+      const currentTime = dayjs().format("HH:mm:ss");
+
+        const p = <p>Current time: {currentTime} </p>
+        root.render(p);
+      }, 1000);
+    </script>
+  </body>
+</html>

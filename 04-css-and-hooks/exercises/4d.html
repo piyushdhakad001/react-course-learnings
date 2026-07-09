@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    *{
+      font-family: Arial;
+    }
+    .app-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header{
+      font-size: xx-large;
+      font-weight: medium;
+    }
+    .input{
+      width: 60%;
+      margin-top: 10px;
+      height: 30px;
+      border-radius: 5px;
+    }
+
+    .buttons-div{
+      margin-top: 10px;
+    }
+    .button {
+      margin-top: 20px;
+      background-color: rgb(0, 123, 255);
+      padding: 10px 15px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script type="text/babel">
+
+    function App() {
+      return (
+        <div className='app-container'>
+          <p className='header'>Hello, welcome to my website</p>
+          <div>
+            <input className='input' placeholder='Email' />
+          </div>
+          <div>
+            <input className='input' placeholder='Password' />
+          </div>
+          <div >
+            <button className='button'>Login</button>
+            <button className='button'>Sign up</button>
+          </div>
+        </div>
+      )
+    }
+
+
+    const container = document.querySelector(".container");
+    const rend = ReactDOM.createRoot(container);
+    rend.render(<App />);
+  </script>
+</body>
+
+</html>

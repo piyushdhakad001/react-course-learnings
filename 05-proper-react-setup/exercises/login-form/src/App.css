@@ -1,0 +1,13 @@
+ *{
+      font-family: Arial;
+    }
+    .app-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header{
+      font-size: xx-large;
+      font-weight: medium;
+    }
+   

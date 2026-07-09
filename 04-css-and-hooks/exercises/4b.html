@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    .button {
+      background-color: rgb(25, 135, 84);
+      padding: 10px 20px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script type="text/babel">
+
+    function Button() {
+      const [buttonStatus, setButtonStatus] = React.useState(true);
+
+      function handleClick(event) {
+        {
+          buttonStatus === true ?
+          setButtonStatus(false) :
+          setButtonStatus(true)
+        }
+      }
+      return (
+        <button className="button"
+          onClick={handleClick}>{buttonStatus === true ? 'On' : 'OFF'}</button>
+      )
+
+    }
+
+    const container = document.querySelector(".container");
+    const rend = ReactDOM.createRoot(container);
+    rend.render(<Button />);
+  </script>
+</body>
+
+</html>

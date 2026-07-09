@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script type="text/babel">
+      <div class="container"></div>
+
+     function App(){
+      return (
+       <LoginForm />
+      )
+     }
+
+     function LoginForm(){
+      return(
+       <>
+        <p>Hello, welcome to my website</p>
+        <div>
+        <input placeholder="Email"  />
+        </div>
+        <input placeholder="Password" />
+        <div>
+        <button>Login</button>
+        <button>Sign up</button>
+        </div>
+        </>
+      )
+     }
+
+
+     const container = document.querySelector(".container");
+     const rend = ReactDOM.createRoot(container);
+     rend.render(<App />);
+    // rend.render(<LoginForm />)
+    </script>
+  </body>
+</html>

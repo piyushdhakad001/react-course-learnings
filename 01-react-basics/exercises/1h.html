@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <div class="container"></div>
+
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script type="text/babel">
+
+       let today = dayjs();
+      today = today.format('MMMM D')
+
+      const div = (
+        <div>
+          <p>Today is {today}</p>
+          
+        </div>
+      )
+     
+      const container = document.querySelector(".container");
+      ReactDOM.createRoot(container).render(div);
+    </script>
+</body>
+</html> 

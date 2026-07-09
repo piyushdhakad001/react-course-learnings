@@ -1,0 +1,33 @@
+ .input{
+      width: 60%;
+      margin-top: 10px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .input-show-container{
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    .buttons-div{
+      margin-top: 10px;
+    }
+    .button {
+      margin-top: 20px;
+      background-color: rgb(0, 123, 255);
+      padding: 10px 15px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .show-hide-button{
+      width: 50px;
+      height: 30px;
+      margin-left: -50px;
+    }
