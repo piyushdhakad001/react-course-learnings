@@ -46,7 +46,7 @@ export function HomePage( {cart} ) {
                   <div className="product-rating-count link-primary">{product.rating.count}</div>
                 </div>
 
-                <div className="product-price">${formatMoney(product.priceCents / 100).toFixed(2)}</div>
+                <div className="product-price">${formatMoney((product.priceCents / 100).toFixed(2))}</div>
 
                 <div className="product-quantity-container">
                   <select>
