@@ -1,15 +1,27 @@
 import dayjs from "dayjs"
 import { Fragment } from "react"
 import { useParams } from 'react-router'
+import axios from "axios";
 
 
-export function OrderDetails({ order }) {
+export function OrderDetails({ order, loadCart }) {
   const {orderId, productId } = useParams();
-  // console.log(params)
+  
+  
   
   return (
     <div className="order-details-grid">
       {order.products.map((orderProduct) => {
+
+        const addToCart = async () => {
+          await axios.post('api/cart-items', {
+            productId: orderProduct.product.id,
+            quantity: 1
+          });
+          await loadCart();
+        }
+
+
         return (
           <Fragment key={orderProduct.product.id}>
             <div className="product-image-container">
@@ -25,7 +37,7 @@ export function OrderDetails({ order }) {
               </div>
               <div className="product-quantity">
                 Quantity: {orderProduct.quantity}</div>
-              <button className="buy-again-button button-primary">
+              <button className="buy-again-button button-primary" onClick={addToCart}>
                 <img
                   className="buy-again-icon"
                   src="images/icons/buy-again.png"
