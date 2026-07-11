@@ -20,7 +20,7 @@ export function OrdersPage({ cart }) {
 
   return (
     <>
-      <link rel="icon" type="image/svg+xml" href="/orders-favicon.svg" />
+      <link rel="icon" type="image/svg+xml" href="/orders-favicon.png" />
       <title>Orders</title>
 
       <Header cart={cart} />
