@@ -10,9 +10,9 @@ export function PaymentSummary({ paymentSummary }) {
       {paymentSummary && (
         <>
           <div className="payment-summary-row">
-            <div>Items ({paymentSummary.totatItems}):</div>
+            <div>Items ({paymentSummary.totalItems}):</div>
             <div className="payment-summary-money">
-              {formatMoney(paymentSummary.productCost)}</div>
+              {formatMoney(paymentSummary.productCostCents)}</div>
           </div>
 
           <div className="payment-summary-row">
@@ -24,7 +24,7 @@ export function PaymentSummary({ paymentSummary }) {
           <div className="payment-summary-row subtotal-row">
             <div>Total before tax:</div>
             <div className="payment-summary-money">
-              {formatMoney(paymentSummary.totalCostBeforeTax)}</div>
+              {formatMoney(paymentSummary.totalCostBeforeTaxCents)}</div>
           </div>
 
           <div className="payment-summary-row">
